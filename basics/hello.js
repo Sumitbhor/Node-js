@@ -14,5 +14,5 @@ function display3() {
 }
 //multitasking
 setInterval(display, 3000);  
-setInterval(display2, 1000); 
+setInterval(display2, 1000);
 setInterval(display3, 500);  
