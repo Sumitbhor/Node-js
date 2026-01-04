@@ -1,9 +1,14 @@
+var person={
+    'name':'sumit sudam bhor',
+    'email': 'sumitbhor227@gmail.com',
+    'contact': '8530086989'
+}
 var http = require("http");
 
 
 var onRequestHandler = function(request, response){
-    response.writeHead(200,{"content-type": "text/html"})
-    response.write("<h1>happy new year</h1>");
+    response.writeHead(200,{"content-type": "text/json"})
+    response.write(JSON.stringify(person));
     response.end() ;
 }
 
