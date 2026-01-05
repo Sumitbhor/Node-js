@@ -1,0 +1,26 @@
+{
+  "name": "transflowerstoreweb",
+  "version": "1.0.0",
+  "description": "This is transflower online web application created bu sumit ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumitbhor/Node-js.git"
+  },
+  "author": " sumit bhor ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sumitbhor/Node-js/issues"
+  },
+  "homepage": "https://github.com/Sumitbhor/Node-js#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.1.1",
+    "mysql": "^2.18.1",
+    "save": "^2.9.0"
+  }
+}
