@@ -7,5 +7,17 @@
         <h1>contact us</h1>
         <a href="/">Home</a> | <a href="about.html">About us</a> | <a href="contact.html">Contact </a>| <a href="login.html" > Login </a>
         <hr/>
+        <p id="para1">Seed infotech Pvt. Ltd......</p>
+        <p id="para2">Microsoft India pvt. Ltd  ......</p>
+        <p id="para3">This is a simple sentence ......</p>
+        <button onclick="onButtonClick()" >Change Content</button>
+        <script>
+            var onButtonClick=function(){
+                //alert("button pressed....");
+                //DOM
+                var element =document.getElementById("para1")
+                element.innerHTML="Transflower learning Pvt. Ltd ......."
+            }
+        </script>
     </body>
 </html>

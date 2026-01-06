@@ -4,8 +4,32 @@
         <title>Transflower Web</title>
     </head>
     <body>
-        <h1>Details</h1>
+        <h1>Flower's Details</h1>
         <a href="/">Home</a> | <a href="/about.html">About us</a> | <a href="contact.html">Contact </a>
         <hr/>
+        <input id="username" type="text" value="sumit bhor">
+        <br/><br/>
+        <input id="location" type="text" value="tambademala">
+        <br/><br/>
+        <button onclick="onButtonClick()">Show data</button>
+        <hr/>
+        <p id="paraUsername">username </p>
+        <p id="paraLocation">Location </p>
+        <script>
+            var onButtonClick=function(){
+                var textUsername = document.getElementById("username");
+                var dataUsername = textUsername.value ;
+
+                var textLocation = document.getElementById("location");
+                var dataLocation = textLocation.value ;
+
+                var paraUsername= document.getElementById("paraUsername");
+                paraUsername.innerHTML= dataUsername ;
+
+                var paraLocation= document.getElementById("paraLocation");
+                paraLocation.innerHTML= dataLocation ;
+
+            }
+        </script>
     </body>
 </html>
