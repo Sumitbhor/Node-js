@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transflower Web</title>
+    </head>
+    <body>
+        <h1>event handling </h1>
+        <!-- <button onclick="alert('button is pressed')">Click me </button> -->
+        <button id="myBtn">Press me </button>
+        <p id="para1">hello</p>
+
+        <script>
+            var btn =document.getElementById("myBtn");
+            btn.addEventListener("click", displaydate);
+            document.addEventListener("mousedown", onMouseDown);
+            document.addEventListener("mouseup", onMouseup);
+            document.addEventListener("mousemove", onMousemoving);
+            document.addEventListener("keydown", onKeydown);
+            
+           
+            function displaydate () {
+                document.getElementById("para1").innerHTML= Date();
+            }
+
+            function onMouseDown(event){
+                var x = event.clientX ;
+                var y = event.clientY;
+                var coords = "X coords : " + x + ", Y coords "+ y  ;
+                document.getElementById("para1").innerHTML= "Mouse down"+ coords ;
+            }
+
+            function onMouseup(){
+                var x = event.clientX ;
+                var y = event.clientY;
+                var coords = "X coords : " + x + ", Y coords "+ y  ;
+                document.getElementById("para1").innerHTML= "Mouse up"+ coords ;
+            }
+
+            function onMousemoving(){
+                var x = event.clientX ;
+                var y = event.clientY;
+                var coords = "X coords : " + x + ", Y coords "+ y  ;
+                document.getElementById("para1").innerHTML= "Mouse moving"+ coords ;
+            }
+            function onKeydown(){
+                document.getElementById("para1").innerHTML= "Key down" ;
+            }
+            
+        </script>
+    </body>
+</html>
