@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title> 
+        <title>Login</title> 
     </head>
     <body>
-        <h1></h1>
+        <h1>Login</h1>
+        <hr/>
+        <form action="/api/login" method="post">
+            <table >
+                <tr>
+                    <td><label>User Name </label></td>
+                    <td><input type="text" id="username" name="username" required ></td>
+                </tr>
+                <br/><br/>
+                <tr>
+                    <td><label>password </label></td>
+                    <td><input type="text" id="password" name="password" required ></td>
+                </tr>
+                <tr>
+                    <td><label> </label></td>
+                    <td><button type="submit">Login</button></td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>

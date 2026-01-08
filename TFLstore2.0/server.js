@@ -49,19 +49,38 @@ app.get("/api/customers/:id",(request, response)=>{
 })
 
 app.post("/api/register",(request,response)=>{
-    var newCredential = request.body;
-    credentials.push(newCredential);
+    var newCustomer = request.body;
+    var newCredential =[
+        {
+            "username" : newCustomer.username, 
+            "password": newCustomer.password
+        }
+    ]
+    
+    var cust={
+       "id" : newCustomer.id,
+       "firstname":newCustomer.firstname,
+       "lastname":newCustomer.lastname,
+       "email":newCustomer.email,
+       "contactnumber":newCustomer.contactnumber,
+       "city":newCustomer.city
+    }
+     customers.push(cust);
+     credentials.push(newCredential);
     response.send({"message":"registration successful"});
 })
 
 app.post("/api/login",(request,response)=>{
     let User= request.body;
     let theUser = credentials.find(x=> x.username == User.username && x.password == User.password);
+    response.send(User);
     if(theUser!== undefined){
         response.send({"message":"login successful"});
+        console.log(theUser);
     }
     else{
         response.send({"message":"invalid username or password"});
+        console.log(theUser);
     }
 })
 
@@ -77,7 +96,7 @@ app.post("/api/flowers", (request,response)=>{
     response.send("New Flower is inserted to collection");
 })
 
-app.delete("/api/flowers/:", (request, response)=>{
+app.delete("/api/flowers/:id", (request, response)=>{
     let id = request.params.id;
     let remainingFlowers= flowers.filter(f=>f.id != id);
     let newFlower= remainingFlowers ;

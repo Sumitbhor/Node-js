@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title> 
+        <title>Register new User</title>  
     </head>
     <body>
-        <h1></h1>
+        <h1>Register New User</h1>
+        <form action="/api/Register" method="post" >
+            <table>
+                <tr>
+                    <td><label>User name</label></td>
+                    <td><input type="text" id="username" name="username" required></td>
+                </tr>
+                <tr>
+                    <td><label>password</label></td>
+                    <td><input type="text" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td><label></label></td>
+                    <td><button type="button" onclick="RenderToProfile()">Create Account </button></td>
+                </tr>
+            </table>
+            <div style="display: none;" id="profile">
+            <table>
+                <tr>
+                    <td><label>Id </label></td>
+                    <td><input type="number" id="id" name="id" placeholder="Enter Id" required ></td>
+                </tr>
+                <tr>
+                    <td><label>First Name </label></td>
+                    <td><input type="text" id="firstname" name="firstname" placeholder="Enter firstname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name </label></td>
+                    <td><input type="text" id="lastname" name="lastname" placeholder="Enter lastname" required></td>
+                </tr> required
+                <tr>
+                    <td><label>Email  </label></td>
+                    <td><input type="text" id="email" name="email" placeholder="enter email" required></td>
+                </tr>
+                <tr>
+                    <td><label> contact number </label></td>
+                    <td><input type="number" id="contactnumber" name="contactnumber" required></td>
+                </tr>
+                <tr>
+                    <td><label> city </label></td>
+                    <td><input type="text" id="city" name="city" required></td>
+                </tr>
+                <tr>
+                    <td><label>  </label></td>
+                    <td><button type="submit" id="btn" name="btn" required>Sign in</button></td>
+                </tr>
+            </table>
+            </div>
+        </form>
+
+        <script>
+            function RenderToProfile()
+            {
+               var profile=document.getElementById("profile");
+              profile.style.display = "block";
+            }
+        </script>
     </body>
 </html>
