@@ -1,0 +1,21 @@
+{
+  "name": "tflstore2.0",
+  "version": "1.0.0",
+  "description": "simple transflower store web application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/sumitbhor/node-js"
+  },
+  "author": "Sumit Bhor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.1.2",
+    "mysql": "^2.18.1"
+  }
+}

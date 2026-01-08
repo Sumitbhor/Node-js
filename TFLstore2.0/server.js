@@ -1,0 +1,87 @@
+var express = require('express');
+var path = require('path');
+var app = express();
+
+var flowers=[
+    {"id":1, "name":"marigold", "description":"wedding flower", "unitprice":12, "quantity": 5000, "likes":45000},
+    {"id":2, "name":"lotus", "description":"national flower of India", "unitprice":20, "quantity": 3000, "likes":35000},
+    {"id":3, "name":"rose", "description":"romantic flower", "unitprice":15, "quantity": 4000, "likes":50000},
+    {"id":4, "name":"jasmine", "description":"fragrant flower", "unitprice":10, "quantity": 6000, "likes":25000}
+]
+
+var credentials=[
+    {"username":"sumitbhor227@gmail.com", "password":"sumit123"},
+    {"username":"rahulsharma@gmail.com", "password":"rahul123"},
+    {"username":"anitagupta@gmail.com", "password":"anita123"},
+    {"username":"nehapatel@gmail.com", "password":"neha123"}
+]
+var customers=[
+    {"id":1, "firstname":"sumit","lastname":"bhor", "email":"sumitbhor227@gmail.com", "contactnumber":"9876543210", "city":"pune"},
+    {"id":2, "firstname":"rahul","lastname":"sharma", "email":"rahulsharma@gmail.com", "contactnumber":"9876543211", "city":"mumbai"},
+    {"id":3, "firstname":"anita","lastname":"gupta", "email":"anitagupta@gmail.com", "contactnumber":"9876543212", "city":"delhi"},
+    {"id":4, "firstname":"neha","lastname":"patel", "email":"nehapatel@gmail.com", "contactnumber":"9876543213", "city":"bangalore"}
+];
+app.use(express.static(path.join(__dirname,'public')));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+app.get("/", (request, response)=>{
+    response.sendFile(__dirname+ "index.html");
+})
+app.get("/api/flowers",(request, response)=>{
+    response.send(flowers)
+})
+
+app.get("/api/flowers/:id",(request, response)=>{
+    let id = request.params.id;
+    var flower = flowers.find(x=> x.id == id);
+    response.send(flower);
+})
+
+app.get("/api/customers",(request, response)=>{
+    response.send(customers)
+})
+
+app.get("/api/customers/:id",(request, response)=>{
+    let id = request.params.id;
+    var customer = customers.find(x=> x.id == id);
+    response.send(customer);
+})
+
+app.post("/api/register",(request,response)=>{
+    var newCredential = request.body;
+    credentials.push(newCredential);
+    response.send({"message":"registration successful"});
+})
+
+app.post("/api/login",(request,response)=>{
+    let User= request.body;
+    let theUser = credentials.find(x=> x.username == User.username && x.password == User.password);
+    if(theUser!== undefined){
+        response.send({"message":"login successful"});
+    }
+    else{
+        response.send({"message":"invalid username or password"});
+    }
+})
+
+app.delete("/api/flowers/:id",(request, response)=>{
+    let id = request.params.id ;
+    let remainingFlowers= flowers.filter(f=>f.id!==id);
+    flowers= remainingFlowers;
+})
+
+app.post("/api/flowers", (request,response)=>{
+    let newFlower= request.body ;
+    flowers.push(newFlower);
+    response.send("New Flower is inserted to collection");
+})
+
+app.delete("/api/flowers/:", (request, response)=>{
+    let id = request.params.id;
+    let remainingFlowers= flowers.filter(f=>f.id != id);
+    let newFlower= remainingFlowers ;
+    response.send("flowers is removed from collection ")
+})
+app.listen(5000);
+console.log("server is listening on port number 5000");
