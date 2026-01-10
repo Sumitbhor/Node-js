@@ -85,5 +85,13 @@ app.delete("/api/flowers/:id", (request, response)=>{
     let newFlower= remainingFlowers ;
     response.send("flowers is removed from collection ")
 })
+
+app.put("/api/customers/:id", (request, response)=>{
+    let id = request.params.id;
+    let updatecustomer = request.body;
+    let index = customers.findIndex(c=> c.id == id);
+    customers[index]= updatecustomer;
+    response.send("customer details are updated");
+})
 app.listen(5000);
 console.log("server is listening on port number 5000");
