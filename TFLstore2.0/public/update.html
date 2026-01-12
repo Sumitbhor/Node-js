@@ -51,7 +51,7 @@
                             "city":document.getElementById("city").value
                         }
                     console.log(customer.id)
-                    var url ="/api/customers/"+customer.id ;
+                    var url ="/updatecustomer/"+customer.id ;
                     $.ajax({
                         url: url,
                         type: 'PUT',
