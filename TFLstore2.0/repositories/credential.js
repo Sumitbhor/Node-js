@@ -6,7 +6,7 @@ exports.insertCredential=(username,password,resut)=>{
 };
 
 exports.deleteCredential=(id,result)=>{
-    var sql = "delete from credentials where id=?";
+    var sql = "delete from credentials where credential_id=?";
     connection.query(sql, [id],result);
 };
 
@@ -17,6 +17,6 @@ exports.getAllCredentials=(result)=>{
 };
 
 exports.updateCredential=(username,password,id,result)=>{
-    var sql = "update credentials set username=?, password=? where id=?";
+    var sql = "update credentials set username=?, password=? where credential_id=?";
     connection.query(sql, [username,password,id],result);
 };

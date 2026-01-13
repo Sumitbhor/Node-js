@@ -9,7 +9,7 @@ exports.addCustomer=(request,response)=>{
         }    
         response.json({
             message : "customer added successfully",
-            //id : "result.insertedvalue"
+            //id : result.insertedvalue
         })
         console.log("data inserted successfully")
     });
@@ -40,7 +40,7 @@ exports.getAllCustomers=(request,response)=>{
 exports.updateCustomer=(request,response)=>{
     const {firstname, lastname,email,contactNo,city}=request.body
     const id = request.params.id;
-    customerService.updateCustomer(firstname, lastname,email,contactNo,city,(err,result)=>{
+    customerService.updateCustomer(firstname, lastname,email,contactNo,city,id,(err,result)=>{
         if (err){
             return response.status(500).json(err);
         }

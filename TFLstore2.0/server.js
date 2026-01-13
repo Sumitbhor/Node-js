@@ -104,7 +104,7 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/customers', userRoutes);
-app.use('api/credentials',credentialRoutes)
+app.use('/api/credentials',credentialRoutes)
 app.listen(5000, () => {
     console.log("Server listening on port 5000");
 });

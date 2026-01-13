@@ -2,7 +2,7 @@
 var customerRepo=require('../repositories/customerrepository');
 
 exports.addCustomer=(firstname, lastname,email,contactNo, city,resut)=>{
-    customerRepo.addCustomer(firstname, lastname,email,contactNo, city,resut);
+    customerRepo.insertCustomer(firstname, lastname,email,contactNo, city,resut);
 };
 
 exports.deleteCustomer=(id,result)=>{

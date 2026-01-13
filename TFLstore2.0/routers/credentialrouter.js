@@ -8,4 +8,4 @@ router.get('/getAllcredentials',credentialController.getAllCredentials);
 router.put('/updatecredential/:id',credentialController.updateCredential);
 
 module.exports=router;
-
+ 
