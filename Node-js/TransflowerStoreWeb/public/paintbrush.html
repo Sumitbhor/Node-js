@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Paint Brush</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="400" style="background-color: rgb(227, 94, 33);"></canvas>
+        <h1 style="color: rgb(255, 0, 0);">Transflower paint Brush</h1>
+        <p style="color: rgb(0, 13, 255); font-size: large; font-family: Georgia, 'Times New Roman', Times, serif ;" >Doing ordinary things extraordinary </p>
+        <script>
+            function drawline(){
+                var theCanvas = document.getElementById("canvas");
+                var context = theCanvas.getContext("2d");
+                context.moveTo(10,10);
+                context.lineTo(500,400);
+                context.stroke();
+            }
+            drawline();
+        </script>
+    </body>
+</html>
