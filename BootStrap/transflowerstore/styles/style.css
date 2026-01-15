@@ -9,3 +9,10 @@
                     background-color:darkmagenta;
                   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.card-img {
+  height: 250px;
+  object-fit: contain;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
